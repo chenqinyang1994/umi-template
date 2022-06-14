@@ -1,0 +1,9 @@
+/scripts
+/config
+/dist
+/dist*
+.vscode
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+!.eslintrc.js

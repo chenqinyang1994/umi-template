@@ -8,3 +8,8 @@ declare module '*.svg' {
   const url: string;
   export default url;
 }
+declare interface Window {
+  umi_version: any;
+  routerBase?: string;
+}
+declare module 'antd-dayjs-webpack-plugin';
