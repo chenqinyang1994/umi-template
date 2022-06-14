@@ -1,5 +1,3 @@
-import _set from 'lodash/set';
-
 import { companyGetUser } from '@/services/company';
 
 export default {
@@ -10,17 +8,6 @@ export default {
   reducers: {
     save(state, { payload }) {
       return { ...state, ...payload };
-    },
-    entities(draft, { payload = {} }) {
-      Object.keys(payload).forEach((key) => {
-        _set(draft, ['entities', key], payload[key]);
-      });
-    },
-    entityUpdate(draft, { payload }) {
-      const { id, ...values } = payload;
-      Object.keys(values).forEach((key) => {
-        _set(draft, ['entities', id, key], values[key]);
-      });
     },
   },
   effects: {

@@ -3,11 +3,7 @@ import axios from 'axios';
 import { message } from 'antd';
 import { API_HOST } from '@/constants/api';
 
-// import netWorkState from './netWorkState';
 import authService from './authService';
-
-// const MaxFailureTime = 3;
-// let failureTime = 0;
 
 // 不提示的api list
 const notToast = ['api/v1/status'];
@@ -38,8 +34,6 @@ const request = async (options: Ioptions) => {
       return res.data;
     }
 
-    // netWorkState.set(true);
-    // failureTime = 0;
     if (res.status !== 200 || !res.data || res.data.code !== 200) {
       const err: Error & { response?: AxiosResponse } = new Error();
       err.response = res;
@@ -56,11 +50,6 @@ const request = async (options: Ioptions) => {
       window.location.href = `${window.routerBase}/login`;
     }
     if (err.response && err.response.data && err.response.data.error) {
-      // // 连续断网 3 次
-      // failureTime += 1;
-      // if (failureTime >= MaxFailureTime) {
-      //   netWorkState.set(false);
-      // }
       message.error(err.response.data.error);
       return { code: -1, msg: err.response.data.error };
     }

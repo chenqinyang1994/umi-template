@@ -10,12 +10,14 @@ import './index.less';
 type Iprops = {
   user: any[];
 };
+
 const Company: React.FC = () => {
   const { user } = useSelector<DefaultRootState, Iprops>(
     (state: { company: { user: any[] } }) => ({
       user: state.company.user,
     }),
   );
+  const dispatch = useDispatch<Dispatch>();
 
   console.log('====================================');
   console.log('user---', user);
@@ -31,8 +33,6 @@ const Company: React.FC = () => {
   console.log('====================================');
   console.log('companyDetailData---', companyDetailData);
   console.log('====================================');
-
-  const dispatch = useDispatch<Dispatch>();
 
   useEffect(() => {
     getDetail();
