@@ -12,7 +12,7 @@ export default function IndexPage() {
   };
   return (
     <div>
-      <h1 className={styles.title}>Page index</h1>
+      <h1 className={styles.title}>Page home</h1>
       <DatePicker onChange={onChange} picker="week"></DatePicker>
     </div>
   );
