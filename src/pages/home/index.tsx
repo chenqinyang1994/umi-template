@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { message, DatePicker } from 'antd';
 import type { DatePickerProps } from 'antd';
+import moment from 'moment';
 import styles from './index.less';
 
 export default function IndexPage() {
@@ -13,7 +14,11 @@ export default function IndexPage() {
   return (
     <div>
       <h1 className={styles.title}>Page home</h1>
-      <DatePicker onChange={onChange} picker="week"></DatePicker>
+      <DatePicker
+        defaultValue={moment()}
+        onChange={onChange}
+        picker="week"
+      ></DatePicker>
     </div>
   );
 }

@@ -31,7 +31,6 @@
     "@umijs/preset-react": "1.x",
     "antd": "^4.21.1",
     "axios": "^0.27.2",
-    "dayjs": "^1.11.3",
     "dva": "2.6.0-beta.22",
     "umi": "^3.5.23"
   },
