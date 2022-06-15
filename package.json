@@ -2,17 +2,18 @@
   "private": true,
   "scripts": {
     "start": "umi dev",
-    "build": "umi build",
     "qa": "export TARGET=qa && umi dev",
     "prod": "export TARGET=prod && umi dev",
+    "set-version": "node scripts/set-version.js",
+    "build": "npm run set-version && umi build",
     "build:qa": "export TARGET=qa && npm run build",
     "build:prod": "export TARGET=prod && npm run build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "ce": "npx serve dist",
-    "an": "ANALYZE=1 umi build"
+    "serve": "npx serve -s dist",
+    "analyze": "ANALYZE=1 umi build"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

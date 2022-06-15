@@ -26,4 +26,5 @@ export default defineConfig({
   chainWebpack(memo, { env, webpack, createCSSRule }) {
     memo.plugin('AntdDayjsWebpackPlugin').use(AntdDayjsWebpackPlugin);
   },
+  copy: ['version.json'],
 });
