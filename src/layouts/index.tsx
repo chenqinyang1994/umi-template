@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import type { Dispatch, IRouteComponentProps } from 'umi';
-import { useDispatch } from 'umi';
+import type { IRouteComponentProps } from 'umi';
 import type { Location } from '@/types';
 
 import Header from '@/components/header';
@@ -15,13 +14,10 @@ const Layout: React.FC<IRouteComponentProps> = ({
   // 存储并去掉url中的tk和pf参数
   useUrlToken(history, location);
 
-  const dispatch = useDispatch<Dispatch>();
-
   const isLoginPage = location.pathname.startsWith('/login');
   const isHomePage = location.pathname.startsWith('/home');
   const isRoot = location.pathname === '/';
   const { tk } = (location as Location).query || {};
-  const token = authService.get();
 
   useEffect(() => {
     if (tk) return;
